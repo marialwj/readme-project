@@ -1,7 +1,7 @@
 const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
-const markdown = require("./utils/generateMarkdown");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 const questions = [
     {   
@@ -50,22 +50,29 @@ const questions = [
     }
 ]
 
-function init () {
-    inquirer.prompt(questions)
-    .then((inquirerResponse, data) => {   
+function init() {
+    inquirer
+      .prompt(questions)
+      .then((inquirerResponse) => {
         console.log("Making ReadMe");
-        fs.writeFileSync("ReadMe.md", inquirerResponse, data);
-    })
-    .catch((err) => {
+        const markdownContent = generateMarkdown(inquirerResponse);
+  
+        // Write the generated markdown content to ReadMe.md
+        fs.writeFileSync("ReadMe.md", markdownContent);
+        
+        // Get GitHub user data based on the provided username
+        const userName = inquirerResponse.userName;
+        axios.get(`https://api.github.com/users/${userName}`)
+          .then((response) => {
+            console.log(response.data);
+          })
+          .catch((err) => {
+            console.log("Error fetching GitHub user data:", err);
+          });
+      })
+      .catch((err) => {
         console.log(err);
-    })
-}
-
-init();
-
-const userName = questions.userName
-
-axios.get(`https://api.github.com/users/${userName}`)
-.then(questions => {
-  console.log(questions.data);
-});
+      });
+  }
+  
+  init();
