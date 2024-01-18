@@ -1,6 +1,6 @@
 
 
-# hi
+# hi@
 
 # Table of Content
 -[description](#description)
@@ -15,25 +15,25 @@
 undefined
 ##username:
 
-    so its an application that can.....
+    cool
 ##description:
 
-    npm, node, html, javascript, axios
+    very cool
 ##installation:
 
-    to make read me easily
+    idk!
 ##usage:
 
-    nothing
+    undefined
 ##licenses:
 
-    just me :)
+    yo mama
 ##contribution:
 
-    who?
+    no tests
 ##test:
 
-    undefined
+    notext123@jmail.com
 ##email:
 
     undefined

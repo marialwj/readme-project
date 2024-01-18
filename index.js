@@ -4,51 +4,46 @@ const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 const questions = [
-    {   
-        message: "What is the name of the project?",
-        name: "title"
+    {
+      message: "What's the name of your project?",
+      name: "title",
     },
-    {   
-        message: "Please provide a table on content",
-        name: "table of content"
+    {
+      message: "Briefly describe your project:",
+      name: "description",
     },
-    {   
-        message: "What is the name of the user?",
-        name: "userName"
+    {
+      message: "How do users install your project?",
+      name: "installation",
     },
-    {  
-        message: "Please provide a description of the project",
-        name: "description"
+    {
+      message: "How can others use your project?",
+      name: "usage",
     },
-    {   
-        message: "What is the installation process?",
-        name: "installation"
+    {
+      type: "list",
+      message: "Choose a license for your project:",
+      name: "license",
+      choices: ["MIT", "Apache 2.0", "GPL 3.0", "BSD 3", "None"],
     },
-    {   
-        message: "How will this project be used?",
-        name: "usage"
+    {
+      message: "Who contributed to your project?",
+      name: "contribution",
     },
-    {   
-        message: "What licenses are required with this project?",
-        name: "licenses"
+    {
+      message: "What's the testing process for your project?",
+      name: "test",
     },
-    {   
-        message: "Who were the contributors to this project?",
-        name: "contribution"
+    {
+      message: "What's your GitHub username?",
+      name: "userName",
     },
-    {   
-        message: "What is the test process for this project?",
-        name: "test"
+    {
+      message: "What's your email address? (Optional, for contact purposes)",
+      name: "email",
     },
-    {   
-        message: "What is the user github email address?",
-        name: "GitHub user email"
-    },
-    {   
-        message: "Please provide a profile picture",
-        name: "GitHub profile picture"
-    }
-]
+  ];
+  
 
 function init() {
     inquirer
