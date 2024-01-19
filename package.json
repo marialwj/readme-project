@@ -1,7 +1,7 @@
 {
   "name": "static-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "# Table of Content -[description](#description) -[installation](#installation) -[usage](#usage) -[licenses](#licenses) -[contribution](#contribution) -[test](#test) -[username](#username) -[profile](#profile)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
